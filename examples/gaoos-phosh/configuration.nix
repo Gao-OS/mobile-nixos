@@ -21,6 +21,7 @@ in
         "networkmanager"
         "video"
         "wheel"
+        "adbusers"
       ];
     };
     
@@ -29,5 +30,9 @@ in
     };
 
     services.openssh.enable = true;
+
+    system.stateVersion = "23.11";
+
+    system.copySystemConfiguration = true;
   };
 }

@@ -28,6 +28,7 @@
     phosh-mobile-settings
     openssh
     docker
+    zsh
     busybox
     vim
     neovim
@@ -38,6 +39,11 @@
     aria
     wqy_zenhei
     wqy_microhei
+    bun
+    erlang
+    elixir
+    python3Full
+    awscli2
     jq
     lrzsz
     # GUI
@@ -66,8 +72,6 @@
   ];
 
   hardware.sensor.iio.enable = true;
-
-  system.stateVersion = "23.11";
 
   assertions = [
     { assertion = options.services.xserver.desktopManager.phosh.user.isDefined;
