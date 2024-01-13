@@ -70,7 +70,6 @@
     gnome.gnome-bluetooth
     bitwarden
     bitwarden-cli
-    bitwarden-menu
   ];
 
   hardware.sensor.iio.enable = true;
