@@ -68,11 +68,11 @@
     gnome.networkmanager-fortisslvpn
     gnome.nautilus
     gnome.gnome-bluetooth
-    bitwarden
-    bitwarden-cli
   ];
 
   hardware.sensor.iio.enable = true;
+
+  system.stateVersion = "23.11";
 
   assertions = [
     { assertion = options.services.xserver.desktopManager.phosh.user.isDefined;
