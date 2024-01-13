@@ -38,11 +38,6 @@
     aria
     wqy_zenhei
     wqy_microhei
-    bun
-    erlang
-    elixir
-    python3Full
-    awscli2
     jq
     lrzsz
     # GUI
