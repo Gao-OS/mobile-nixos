@@ -10,7 +10,6 @@
   mobile.beautification = {
     silentBoot = lib.mkDefault true;
     splash = lib.mkDefault true;
-    useKernelLogo = lib.mkDefault true;
   };
 
   mobile.adbd.enable = true;
