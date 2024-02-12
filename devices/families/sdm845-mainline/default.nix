@@ -15,7 +15,6 @@
   };
 
   hardware.enableRedistributableFirmware = true;
-  hardware.firmware = lib.mkBefore [ config.mobile.device.firmware ];
 
   # Note: on devices it's highly likely no firmware is required during stage-1.
   # DRM *should* work fine without firmware.
@@ -28,6 +27,9 @@
       chmod -R +w $out
       # Big file, fills and breaks stage-1
       rm -v $out/lib/firmware/qcom/sdm845/*/modem.mbn
+
+      # Copy extra a630 firmware from linux-firmware
+      cp -vf ${pkgs.linux-firmware}/lib/firmware/qcom/{a630_sqe.fw,a630_gmu.bin} $out/lib/firmware/qcom
     '')
   ];
 
@@ -49,10 +51,6 @@
       "dtbs/qcom/sdm845-${config.mobile.device.name}.dtb"
     ];
   };
-
-  boot.kernelParams = [
-    "console=tty0"
-  ];
 
   mobile.usb.mode = "gadgetfs";
   # The identifiers used here serve as a compatible well-known identifier.

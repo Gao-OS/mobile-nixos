@@ -9,7 +9,7 @@ in
     alsa-ucm-meld = lib.mkOption {
       type = lib.types.bool;
       default = false;
-      description = ''
+      description = lib.mdDoc ''
         Combines the derivation output path share/alsa/ucm2/ with
         pkgs.alsa-ucm-conf and points ALSA to the result.
       '';
@@ -17,7 +17,7 @@ in
   };
 
   config = lib.mkIf cfg.alsa-ucm-meld {
-    environment.pathsToLink = [ "share/alsa/ucm2" ];
+    environment.pathsToLink = [ "/share/alsa/ucm2" ];
     environment.systemPackages = [ pkgs.alsa-ucm-conf ];
 
     environment.variables.ALSA_CONFIG_UCM2 =

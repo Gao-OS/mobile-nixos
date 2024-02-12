@@ -9,10 +9,8 @@
 , withSimulator ? false
 }:
 
-let stdenv = pkgs.stdenvAdapters.keepDebugInfo pkgs.stdenv; in
-
 let
-  inherit (lib) optional optionals optionalString;
+  inherit (lib) optional optionals;
   simulatorDeps = [
     SDL2
   ];
@@ -97,13 +95,13 @@ let
 in
   stdenv.mkDerivation {
     pname = "lvgui";
-    version = "2022-10-26";
+    version = "2023-05-01";
 
     src = fetchFromGitHub {
       repo = "lvgui";
       owner = "mobile-nixos";
-      rev = "364397e6294efb53341cc1c54d4885cb21f40567";
-      sha256 = "sha256-0lcXgfTwvvZPC8DYrbhfxL0cfFE1+RELubuoSq+9oOY=";
+      rev = "e1a23580905419b598b7ed673e47bf210c502bb4";
+      sha256 = "sha256-VbvUVWifvkjQRyqXfNgIFc3LKpFfh7D1xGbJ02cZYpk=";
     };
 
     # Document `LVGL_ENV_SIMULATOR` in the built headers.
@@ -126,10 +124,6 @@ in
     ]
     ++ optionals withSimulator simulatorDeps
     ;
-
-    NIX_CFLAGS_COMPILE = [
-      "-DX_DISPLAY_MISSING"
-    ];
 
     makeFlags = [
       "PREFIX=${placeholder "out"}"

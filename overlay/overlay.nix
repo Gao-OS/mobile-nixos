@@ -1,7 +1,6 @@
 self: super:
 
 let
-  fetchpatch = self.fetchpatch;
   callPackage = self.callPackage;
   # FIXME : upstream fix for .a in "lib" instead of this hack.
   # This is used to "re-merge" the split gcc package.
@@ -20,6 +19,7 @@ in
     android-headers = callPackage ./android-headers { };
     dtbTool = callPackage ./dtbtool { };
     dtbTool-exynos = callPackage ./dtbtool-exynos { };
+    eg25-manager = callPackage ./eg25-manager { };
     libhybris = callPackage ./libhybris {
       # FIXME : verify how it acts on native aarch64 build.
       stdenv = if self.buildPlatform != self.targetPlatform then
@@ -66,6 +66,8 @@ in
     pd-mapper = callPackage ./qrtr/pd-mapper.nix { };
     rmtfs = callPackage ./qrtr/rmtfs.nix { };
 
+    lk2ndMsm8953 = callPackage ./lk2nd/msm8953.nix {};
+
     #
     # Hacks
     # -----
@@ -108,9 +110,6 @@ in
       # Needed for cross-compiling ubootTools
       buildInputs = buildInputs ++ [
         self.openssl
-      ];
-      patches = patches ++ [
-        ./u-boot/0001-mobile-nixos-work-around-ubootTools-cross-compilatio.patch
       ];
     });
 
@@ -161,7 +160,9 @@ in
 
       cross-canary-test = callPackage ./mobile-nixos/cross-canary/test.nix {};
       cross-canary-test-static = self.pkgsStatic.callPackage ./mobile-nixos/cross-canary/test.nix {};
+
+      pine64-alsa-ucm = callPackage ./mobile-nixos/pine64-alsa-ucm {};
     };
 
-    imageBuilder = callPackage ../lib/image-builder {};
+    image-builder = callPackage ./image-builder {};
  }
