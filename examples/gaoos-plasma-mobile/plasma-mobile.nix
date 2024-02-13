@@ -9,6 +9,8 @@
     splash = lib.mkDefault true;
   };
 
+  mobile.adbd.enable = true;
+
   services.xserver = {
     enable = true;
 
@@ -37,4 +39,25 @@
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
   powerManagement.enable = true;
+
+
+  environment.systemPackages = with pkgs; [
+    openssh
+    zsh
+    vim
+    neovim
+    wget
+    curl
+    git
+    silver-searcher
+    aria
+    wqy_zenhei
+    wqy_microhei
+    awscli2
+    jq
+    lrzsz
+    # GUI
+    firefox
+  ];
+
 }
