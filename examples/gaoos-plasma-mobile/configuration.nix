@@ -24,7 +24,7 @@ in
       users.users.${defaultUserName} = {
         isNormalUser = true;
         # Numeric pin makes it **possible** to input on the lockscreen.
-        password = "1234";
+        password = "2580";
         home = "/home/${defaultUserName}";
         extraGroups = [
           "dialout"
@@ -58,6 +58,10 @@ in
       # Start SSH by default...
       # Not a good idea given the fact this config is insecure (well-known password).
       services.openssh.enable = true;
+    }
+
+    {
+      system.stateVersion = "23.11";
     }
   ];
 }

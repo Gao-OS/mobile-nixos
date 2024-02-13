@@ -14,7 +14,10 @@
   services.xserver = {
     enable = true;
 
-    desktopManager.plasma5.mobile.enable = true;
+    desktopManager.plasma5.mobile = {
+      enable = true;
+      installRecommendedSoftware = true;
+    };
 
     displayManager.autoLogin = {
       enable = true;
@@ -59,7 +62,7 @@
     lrzsz
     # GUI
     firefox
+    alacritty
   ];
 
-  system.stateVersion = "23.11";
 }
