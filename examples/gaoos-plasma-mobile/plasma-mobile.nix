@@ -40,6 +40,7 @@
   networking.wireless.enable = false;
   powerManagement.enable = true;
 
+  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     openssh
