@@ -5,8 +5,8 @@
 
 {
   mobile.beautification = {
-    silentBoot = lib.mkDefault true;
-    splash = lib.mkDefault true;
+    silentBoot = lib.mkDefault false;
+    splash = lib.mkDefault false;
   };
 
   mobile.adbd.enable = true;
@@ -60,9 +60,14 @@
     awscli2
     jq
     lrzsz
+    btop
+    htop
+    ifcop
+    cpufetch
     # GUI
     firefox
     alacritty
+    thunderbird
   ];
 
 }
