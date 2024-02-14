@@ -62,7 +62,7 @@
     lrzsz
     btop
     htop
-    ifcop
+    iftop
     cpufetch
     # GUI
     firefox
