@@ -72,7 +72,7 @@
     libsForQt5.plasma-dialer
     libsForQt5.plasma-phonebook
     libsForQt5.plasma-settings
-    libsForQt5.arianna
+    # libsForQt5.arianna
     libsForQt5.tokodon
     libsForQt5.calindori
     libsForQt5.kclock
