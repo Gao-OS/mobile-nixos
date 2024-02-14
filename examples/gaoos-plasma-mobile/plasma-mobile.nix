@@ -73,11 +73,11 @@
     libsForQt5.plasma-phonebook
     libsForQt5.plasma-settings
     # libsForQt5.arianna
-    libsForQt5.tokodon
+    # libsForQt5.tokodon
     libsForQt5.calindori
     libsForQt5.kclock
     libsForQt5.angelfish
-    libsForQt5.qmlkonsole
+    # libsForQt5.qmlkonsole
     libsForQt5.krecorder
     libsForQt5.spacebar
     libsForQt5.kweather
